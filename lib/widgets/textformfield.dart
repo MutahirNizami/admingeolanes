@@ -12,8 +12,11 @@ class CustomTextFormField extends StatelessWidget {
     // double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return TextFormField(
+      cursorHeight: height * 0.025,
+      cursorColor: Mycolor().titlecolor,
+      cursorRadius: Radius.circular(height * 0.02),
       decoration: InputDecoration(
-          contentPadding: const EdgeInsets.all(4),
+          contentPadding: const EdgeInsets.only(left: 8),
           hintText: "Search here",
           hintStyle: GoogleFonts.poppins(
             color: Mycolor().searchcolor,
@@ -21,17 +24,19 @@ class CustomTextFormField extends StatelessWidget {
           ),
           fillColor: Mycolor().fieldcolor,
           filled: true,
-          suffixIcon: Icon(
-            Icons.search,
-            color: Mycolor().searchiconcolor,
-            size: height * 0.032,
-          ),
+          suffixIcon: Icon(Icons.search,
+              color: Mycolor().searchiconcolor, size: height * 0.03),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(height * 0.01),
             borderSide: BorderSide(
               color: Mycolor().fieldbordercolor,
             ),
           ),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(height * 0.01),
+              borderSide: BorderSide(
+                color: Mycolor().fieldbordercolor,
+              )),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(height * 0.01),
               borderSide: BorderSide(
